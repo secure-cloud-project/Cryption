@@ -88,6 +88,8 @@ class FileEncyrption(Encryption):
             with open("{}\\{}".format(file_path,file),'wb') as original_file:
                 original_file.write(self.file[i])
             i+=1    
+        
+       
 
       
     def encrypt_file(self):
@@ -95,8 +97,11 @@ class FileEncyrption(Encryption):
         self.file = self.fernet.encrypt(self.file)
         self.write_file()
             
+        
+            
 
     def decrypt_file(self):
+        
         try:
             self.read_file()
             self.file= self.fernet.decrypt(self.file)
